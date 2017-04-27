@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		729F3EB41EB19E6C00762FB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3EB31EB19E6C00762FB4 /* main.m */; };
+		729F3EB71EB19E6C00762FB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3EB61EB19E6C00762FB4 /* AppDelegate.m */; };
+		729F3EBA1EB19E6C00762FB4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3EB91EB19E6C00762FB4 /* ViewController.m */; };
+		729F3EBD1EB19E6C00762FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729F3EBB1EB19E6C00762FB4 /* Main.storyboard */; };
+		729F3EBF1EB19E6C00762FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 729F3EBE1EB19E6C00762FB4 /* Assets.xcassets */; };
+		729F3EC21EB19E6C00762FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729F3EC01EB19E6C00762FB4 /* LaunchScreen.storyboard */; };
+		729F3ECD1EB19E6C00762FB4 /* TCCarouselViewProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3ECC1EB19E6C00762FB4 /* TCCarouselViewProjectTests.m */; };
+		729F3ED81EB19E6C00762FB4 /* TCCarouselViewProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3ED71EB19E6C00762FB4 /* TCCarouselViewProjectUITests.m */; };
+		729F3EE81EB19EFC00762FB4 /* TCCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3EE71EB19EFC00762FB4 /* TCCarouselView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		729F3EC91EB19E6C00762FB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 729F3EA71EB19E6C00762FB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 729F3EAE1EB19E6C00762FB4;
+			remoteInfo = TCCarouselViewProject;
+		};
+		729F3ED41EB19E6C00762FB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 729F3EA71EB19E6C00762FB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 729F3EAE1EB19E6C00762FB4;
+			remoteInfo = TCCarouselViewProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		729F3EAF1EB19E6C00762FB4 /* TCCarouselViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCCarouselViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		729F3EB31EB19E6C00762FB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		729F3EB51EB19E6C00762FB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		729F3EB61EB19E6C00762FB4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		729F3EB81EB19E6C00762FB4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		729F3EB91EB19E6C00762FB4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		729F3EBC1EB19E6C00762FB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		729F3EBE1EB19E6C00762FB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		729F3EC11EB19E6C00762FB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		729F3EC31EB19E6C00762FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		729F3EC81EB19E6C00762FB4 /* TCCarouselViewProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCCarouselViewProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		729F3ECC1EB19E6C00762FB4 /* TCCarouselViewProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCCarouselViewProjectTests.m; sourceTree = "<group>"; };
+		729F3ECE1EB19E6C00762FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		729F3ED31EB19E6C00762FB4 /* TCCarouselViewProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TCCarouselViewProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		729F3ED71EB19E6C00762FB4 /* TCCarouselViewProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCCarouselViewProjectUITests.m; sourceTree = "<group>"; };
+		729F3ED91EB19E6C00762FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		729F3EE61EB19EFC00762FB4 /* TCCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCarouselView.h; sourceTree = "<group>"; };
+		729F3EE71EB19EFC00762FB4 /* TCCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCarouselView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		729F3EAC1EB19E6C00762FB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		729F3EC51EB19E6C00762FB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		729F3ED01EB19E6C00762FB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		729F3EA61EB19E6C00762FB4 = {
+			isa = PBXGroup;
+			children = (
+				729F3EE51EB19EA100762FB4 /* TCCarouselView */,
+				729F3EB11EB19E6C00762FB4 /* TCCarouselViewProject */,
+				729F3ECB1EB19E6C00762FB4 /* TCCarouselViewProjectTests */,
+				729F3ED61EB19E6C00762FB4 /* TCCarouselViewProjectUITests */,
+				729F3EB01EB19E6C00762FB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		729F3EB01EB19E6C00762FB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				729F3EAF1EB19E6C00762FB4 /* TCCarouselViewProject.app */,
+				729F3EC81EB19E6C00762FB4 /* TCCarouselViewProjectTests.xctest */,
+				729F3ED31EB19E6C00762FB4 /* TCCarouselViewProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		729F3EB11EB19E6C00762FB4 /* TCCarouselViewProject */ = {
+			isa = PBXGroup;
+			children = (
+				729F3EB51EB19E6C00762FB4 /* AppDelegate.h */,
+				729F3EB61EB19E6C00762FB4 /* AppDelegate.m */,
+				729F3EB81EB19E6C00762FB4 /* ViewController.h */,
+				729F3EB91EB19E6C00762FB4 /* ViewController.m */,
+				729F3EBB1EB19E6C00762FB4 /* Main.storyboard */,
+				729F3EBE1EB19E6C00762FB4 /* Assets.xcassets */,
+				729F3EC01EB19E6C00762FB4 /* LaunchScreen.storyboard */,
+				729F3EC31EB19E6C00762FB4 /* Info.plist */,
+				729F3EB21EB19E6C00762FB4 /* Supporting Files */,
+			);
+			path = TCCarouselViewProject;
+			sourceTree = "<group>";
+		};
+		729F3EB21EB19E6C00762FB4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				729F3EB31EB19E6C00762FB4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		729F3ECB1EB19E6C00762FB4 /* TCCarouselViewProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				729F3ECC1EB19E6C00762FB4 /* TCCarouselViewProjectTests.m */,
+				729F3ECE1EB19E6C00762FB4 /* Info.plist */,
+			);
+			path = TCCarouselViewProjectTests;
+			sourceTree = "<group>";
+		};
+		729F3ED61EB19E6C00762FB4 /* TCCarouselViewProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				729F3ED71EB19E6C00762FB4 /* TCCarouselViewProjectUITests.m */,
+				729F3ED91EB19E6C00762FB4 /* Info.plist */,
+			);
+			path = TCCarouselViewProjectUITests;
+			sourceTree = "<group>";
+		};
+		729F3EE51EB19EA100762FB4 /* TCCarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				729F3EE61EB19EFC00762FB4 /* TCCarouselView.h */,
+				729F3EE71EB19EFC00762FB4 /* TCCarouselView.m */,
+			);
+			path = TCCarouselView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		729F3EAE1EB19E6C00762FB4 /* TCCarouselViewProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 729F3EDC1EB19E6C00762FB4 /* Build configuration list for PBXNativeTarget "TCCarouselViewProject" */;
+			buildPhases = (
+				729F3EAB1EB19E6C00762FB4 /* Sources */,
+				729F3EAC1EB19E6C00762FB4 /* Frameworks */,
+				729F3EAD1EB19E6C00762FB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TCCarouselViewProject;
+			productName = TCCarouselViewProject;
+			productReference = 729F3EAF1EB19E6C00762FB4 /* TCCarouselViewProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		729F3EC71EB19E6C00762FB4 /* TCCarouselViewProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 729F3EDF1EB19E6C00762FB4 /* Build configuration list for PBXNativeTarget "TCCarouselViewProjectTests" */;
+			buildPhases = (
+				729F3EC41EB19E6C00762FB4 /* Sources */,
+				729F3EC51EB19E6C00762FB4 /* Frameworks */,
+				729F3EC61EB19E6C00762FB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				729F3ECA1EB19E6C00762FB4 /* PBXTargetDependency */,
+			);
+			name = TCCarouselViewProjectTests;
+			productName = TCCarouselViewProjectTests;
+			productReference = 729F3EC81EB19E6C00762FB4 /* TCCarouselViewProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		729F3ED21EB19E6C00762FB4 /* TCCarouselViewProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 729F3EE21EB19E6C00762FB4 /* Build configuration list for PBXNativeTarget "TCCarouselViewProjectUITests" */;
+			buildPhases = (
+				729F3ECF1EB19E6C00762FB4 /* Sources */,
+				729F3ED01EB19E6C00762FB4 /* Frameworks */,
+				729F3ED11EB19E6C00762FB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				729F3ED51EB19E6C00762FB4 /* PBXTargetDependency */,
+			);
+			name = TCCarouselViewProjectUITests;
+			productName = TCCarouselViewProjectUITests;
+			productReference = 729F3ED31EB19E6C00762FB4 /* TCCarouselViewProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		729F3EA71EB19E6C00762FB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = tardis_cxx;
+				TargetAttributes = {
+					729F3EAE1EB19E6C00762FB4 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					729F3EC71EB19E6C00762FB4 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 729F3EAE1EB19E6C00762FB4;
+					};
+					729F3ED21EB19E6C00762FB4 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 729F3EAE1EB19E6C00762FB4;
+					};
+				};
+			};
+			buildConfigurationList = 729F3EAA1EB19E6C00762FB4 /* Build configuration list for PBXProject "TCCarouselViewProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 729F3EA61EB19E6C00762FB4;
+			productRefGroup = 729F3EB01EB19E6C00762FB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				729F3EAE1EB19E6C00762FB4 /* TCCarouselViewProject */,
+				729F3EC71EB19E6C00762FB4 /* TCCarouselViewProjectTests */,
+				729F3ED21EB19E6C00762FB4 /* TCCarouselViewProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		729F3EAD1EB19E6C00762FB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				729F3EC21EB19E6C00762FB4 /* LaunchScreen.storyboard in Resources */,
+				729F3EBF1EB19E6C00762FB4 /* Assets.xcassets in Resources */,
+				729F3EBD1EB19E6C00762FB4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		729F3EC61EB19E6C00762FB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		729F3ED11EB19E6C00762FB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		729F3EAB1EB19E6C00762FB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				729F3EBA1EB19E6C00762FB4 /* ViewController.m in Sources */,
+				729F3EB71EB19E6C00762FB4 /* AppDelegate.m in Sources */,
+				729F3EB41EB19E6C00762FB4 /* main.m in Sources */,
+				729F3EE81EB19EFC00762FB4 /* TCCarouselView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		729F3EC41EB19E6C00762FB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				729F3ECD1EB19E6C00762FB4 /* TCCarouselViewProjectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		729F3ECF1EB19E6C00762FB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				729F3ED81EB19E6C00762FB4 /* TCCarouselViewProjectUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		729F3ECA1EB19E6C00762FB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 729F3EAE1EB19E6C00762FB4 /* TCCarouselViewProject */;
+			targetProxy = 729F3EC91EB19E6C00762FB4 /* PBXContainerItemProxy */;
+		};
+		729F3ED51EB19E6C00762FB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 729F3EAE1EB19E6C00762FB4 /* TCCarouselViewProject */;
+			targetProxy = 729F3ED41EB19E6C00762FB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		729F3EBB1EB19E6C00762FB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				729F3EBC1EB19E6C00762FB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		729F3EC01EB19E6C00762FB4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				729F3EC11EB19E6C00762FB4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		729F3EDA1EB19E6C00762FB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		729F3EDB1EB19E6C00762FB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		729F3EDD1EB19E6C00762FB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TCCarouselViewProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tardis-cxx.TCCarouselViewProject";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		729F3EDE1EB19E6C00762FB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TCCarouselViewProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tardis-cxx.TCCarouselViewProject";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		729F3EE01EB19E6C00762FB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TCCarouselViewProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tardis-cxx.TCCarouselViewProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TCCarouselViewProject.app/TCCarouselViewProject";
+			};
+			name = Debug;
+		};
+		729F3EE11EB19E6C00762FB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TCCarouselViewProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tardis-cxx.TCCarouselViewProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TCCarouselViewProject.app/TCCarouselViewProject";
+			};
+			name = Release;
+		};
+		729F3EE31EB19E6C00762FB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TCCarouselViewProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tardis-cxx.TCCarouselViewProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TCCarouselViewProject;
+			};
+			name = Debug;
+		};
+		729F3EE41EB19E6C00762FB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TCCarouselViewProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tardis-cxx.TCCarouselViewProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TCCarouselViewProject;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		729F3EAA1EB19E6C00762FB4 /* Build configuration list for PBXProject "TCCarouselViewProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				729F3EDA1EB19E6C00762FB4 /* Debug */,
+				729F3EDB1EB19E6C00762FB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		729F3EDC1EB19E6C00762FB4 /* Build configuration list for PBXNativeTarget "TCCarouselViewProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				729F3EDD1EB19E6C00762FB4 /* Debug */,
+				729F3EDE1EB19E6C00762FB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		729F3EDF1EB19E6C00762FB4 /* Build configuration list for PBXNativeTarget "TCCarouselViewProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				729F3EE01EB19E6C00762FB4 /* Debug */,
+				729F3EE11EB19E6C00762FB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		729F3EE21EB19E6C00762FB4 /* Build configuration list for PBXNativeTarget "TCCarouselViewProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				729F3EE31EB19E6C00762FB4 /* Debug */,
+				729F3EE41EB19E6C00762FB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 729F3EA71EB19E6C00762FB4 /* Project object */;
+}
