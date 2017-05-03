@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72686DB41EB983B8005CB1DD /* TCShowContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72686DB31EB983B8005CB1DD /* TCShowContentCell.m */; };
 		729F3EB41EB19E6C00762FB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3EB31EB19E6C00762FB4 /* main.m */; };
 		729F3EB71EB19E6C00762FB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3EB61EB19E6C00762FB4 /* AppDelegate.m */; };
 		729F3EBA1EB19E6C00762FB4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3EB91EB19E6C00762FB4 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72686DB21EB983B8005CB1DD /* TCShowContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCShowContentCell.h; sourceTree = "<group>"; };
+		72686DB31EB983B8005CB1DD /* TCShowContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCShowContentCell.m; sourceTree = "<group>"; };
 		729F3EAF1EB19E6C00762FB4 /* TCCarouselViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCCarouselViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		729F3EB31EB19E6C00762FB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		729F3EB51EB19E6C00762FB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 			children = (
 				729F3EE61EB19EFC00762FB4 /* TCCarouselView.h */,
 				729F3EE71EB19EFC00762FB4 /* TCCarouselView.m */,
+				72686DB21EB983B8005CB1DD /* TCShowContentCell.h */,
+				72686DB31EB983B8005CB1DD /* TCShowContentCell.m */,
 			);
 			path = TCCarouselView;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				729F3EBA1EB19E6C00762FB4 /* ViewController.m in Sources */,
+				72686DB41EB983B8005CB1DD /* TCShowContentCell.m in Sources */,
 				729F3EB71EB19E6C00762FB4 /* AppDelegate.m in Sources */,
 				729F3EB41EB19E6C00762FB4 /* main.m in Sources */,
 				729F3EE81EB19EFC00762FB4 /* TCCarouselView.m in Sources */,
@@ -521,6 +527,7 @@
 				729F3EDE1EB19E6C00762FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		729F3EDF1EB19E6C00762FB4 /* Build configuration list for PBXNativeTarget "TCCarouselViewProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +536,7 @@
 				729F3EE11EB19E6C00762FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		729F3EE21EB19E6C00762FB4 /* Build configuration list for PBXNativeTarget "TCCarouselViewProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +545,7 @@
 				729F3EE41EB19E6C00762FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

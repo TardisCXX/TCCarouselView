@@ -10,4 +10,9 @@
 
 @interface TCCarouselView : UIView
 
+/// 本地图片集合
+@property (nonatomic, strong) NSArray<UIImage *> *images;
+/// 网络图片URL集合
+@property (nonatomic, strong) NSArray<NSString *> *imageUrls;
+
 @end
