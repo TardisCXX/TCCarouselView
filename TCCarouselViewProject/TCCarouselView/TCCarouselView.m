@@ -33,6 +33,12 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.collectionView.frame = self.bounds;
+}
+
 #pragma mark - UI
 
 - (void)setupUI {
@@ -91,6 +97,9 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        _collectionView.showsHorizontalScrollIndicator = NO;
+        _collectionView.pagingEnabled = YES;
+        _collectionView.bounces = NO;
     }
     
     return _collectionView;

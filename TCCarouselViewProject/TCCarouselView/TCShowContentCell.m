@@ -34,10 +34,17 @@
     [self setupUI];
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.imageView.frame = self.contentView.bounds;
+}
+
 #pragma mark - UI
 
 - (void)setupUI {
     [self.contentView addSubview:self.imageView];
+    
 }
 
 #pragma mark - action

@@ -27,10 +27,11 @@
     
     UIImage *image = nil;
     NSMutableArray *arrM = [NSMutableArray array];
-    for (int i = 0; i < 9; i++) {
+    for (int i = 1; i < 10; i++) {
         image = [UIImage imageNamed:[NSString stringWithFormat:@"mm0%d", i]];
         [arrM addObject:image];
     }
+    
     carouselView.images = arrM.copy;
 }
 
