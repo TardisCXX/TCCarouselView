@@ -10,9 +10,9 @@
 
 @interface TCCarouselView : UIView
 
-/// 本地图片集合
+/// 本地图片集合(设置本地图片轮播)
 @property (nonatomic, strong) NSArray<UIImage *> *images;
-/// 网络图片URL集合
+/// 网络图片URL集合(设置网络图片轮播)
 @property (nonatomic, strong) NSArray<NSString *> *imageUrls;
 
 @end
