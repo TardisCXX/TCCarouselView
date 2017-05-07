@@ -22,6 +22,9 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 /// 当前索引
 @property (nonatomic, assign) NSInteger currentIndex;
 
+/// itemCount
+@property (nonatomic, assign) NSInteger totalItemCount;
+
 /// 图片路径数组
 @property (nonatomic, strong) NSArray<NSString *> *imagePaths;
 
@@ -45,9 +48,9 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
     
     self.flowLayout.itemSize = self.frame.size;
     self.collectionView.frame = self.bounds;
-    if (self.collectionView.contentOffset.x == 0 && self.imagePaths.count) {
+    if (self.collectionView.contentOffset.x == 0 && self.totalItemCount) {
         NSInteger targetIndex = 0;
-        targetIndex = self.imagePaths.count * 0.5;
+        targetIndex = self.totalItemCount * 0.5;
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     }
     [self startTimer];
@@ -87,14 +90,14 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 - (void)updateTimer {
     NSLog(@"------------");
     
-    if (self.imagePaths.count == 0) {
+    if (self.totalItemCount == 0) {
         return;
     }
     
     NSInteger currentIndex = self.collectionView.bounds.size.width == 0 ? 0 : MAX(0, (self.collectionView.contentOffset.x + self.flowLayout.itemSize.width * 0.5) / self.flowLayout.itemSize.width);
     NSInteger targetIndex = currentIndex + 1;
-    if (targetIndex >= self.imagePaths.count) {
-        targetIndex = self.imagePaths.count * 0.5;
+    if (targetIndex >= self.totalItemCount) {
+        targetIndex = self.totalItemCount * 0.5;
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
         return;
     }
@@ -111,7 +114,7 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.imagePaths.count;
+    return self.totalItemCount;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -187,6 +190,12 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 - (void)setImages:(NSArray<NSString *> *)images {
     _images = images;
     self.imagePaths = images;
+    self.totalItemCount = self.imagePaths.count * 100;
+    if (self.imagePaths.count != 1) {
+        [self startTimer];
+    }
+    
+    [self.collectionView reloadData];
 }
 
 - (void)setImageUrls:(NSArray<NSString *> *)imageUrls {
