@@ -17,6 +17,7 @@
 		729F3ECD1EB19E6C00762FB4 /* TCCarouselViewProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3ECC1EB19E6C00762FB4 /* TCCarouselViewProjectTests.m */; };
 		729F3ED81EB19E6C00762FB4 /* TCCarouselViewProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3ED71EB19E6C00762FB4 /* TCCarouselViewProjectUITests.m */; };
 		729F3EE81EB19EFC00762FB4 /* TCCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 729F3EE71EB19EFC00762FB4 /* TCCarouselView.m */; };
+		72D327531EBF0A7D00C37700 /* TCDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D327521EBF0A7D00C37700 /* TCDemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		729F3ED91EB19E6C00762FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		729F3EE61EB19EFC00762FB4 /* TCCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCarouselView.h; sourceTree = "<group>"; };
 		729F3EE71EB19EFC00762FB4 /* TCCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCarouselView.m; sourceTree = "<group>"; };
+		72D327511EBF0A7D00C37700 /* TCDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDemoViewController.h; sourceTree = "<group>"; };
+		72D327521EBF0A7D00C37700 /* TCDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCDemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				729F3EB61EB19E6C00762FB4 /* AppDelegate.m */,
 				729F3EB81EB19E6C00762FB4 /* ViewController.h */,
 				729F3EB91EB19E6C00762FB4 /* ViewController.m */,
+				72D327511EBF0A7D00C37700 /* TCDemoViewController.h */,
+				72D327521EBF0A7D00C37700 /* TCDemoViewController.m */,
 				729F3EBB1EB19E6C00762FB4 /* Main.storyboard */,
 				729F3EBE1EB19E6C00762FB4 /* Assets.xcassets */,
 				729F3EC01EB19E6C00762FB4 /* LaunchScreen.storyboard */,
@@ -291,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D327531EBF0A7D00C37700 /* TCDemoViewController.m in Sources */,
 				729F3EBA1EB19E6C00762FB4 /* ViewController.m in Sources */,
 				72686DB41EB983B8005CB1DD /* TCShowContentCell.m in Sources */,
 				729F3EB71EB19E6C00762FB4 /* AppDelegate.m in Sources */,

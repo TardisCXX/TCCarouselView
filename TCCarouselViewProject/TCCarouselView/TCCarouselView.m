@@ -53,11 +53,8 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
         targetIndex = self.totalItemCount * 0.5;
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     }
-    [self startTimer];
     
-//    [self setupTimer];
-    
-    
+    [self startTimer];    
 }
 
 #pragma mark - UI
@@ -119,7 +116,7 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TCShowContentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kTCShowContentCellIndentifier forIndexPath:indexPath];
-    NSInteger index = indexPath.item % self.imagePaths.count;
+    NSInteger index = [self getCurrentIndex:indexPath];
     cell.imageUrl = self.imagePaths[index];
     
     NSLog(@"index:%zd item:%zd", index,indexPath.item);
@@ -130,13 +127,6 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 #pragma mark - UICollectionViewDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    NSInteger offset = scrollView.contentOffset.x / scrollView.bounds.size.width - 1;
-//    
-//    if (offset == 0) {
-//        return;
-//    }
-//    self.currentIndex = (self.currentIndex + offset + self.images.count) % self.images.count;
-    
     NSInteger offset = self.collectionView.contentOffset.x / self.collectionView.bounds.size.width;
     self.currentIndex = offset + 1;
     
@@ -157,32 +147,18 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"indexPath:%@", @(indexPath.item));
+    
+    if ([self.delegate respondsToSelector:@selector(carouselView:didSelectedIndex:)]) {
+        [self.delegate carouselView:self didSelectedIndex:[self getCurrentIndex:indexPath]];
+    }
+    
 }
 
 #pragma mark - private
 
-//- (void)setupTimer {
-////    if (self.imagePaths.count > 0) {
-////        [self setupDefaultUI];        
-////    }
-////    
-////    if (self.imagePaths.count > 2) {
-////        [self startTimer];
-////    }
-//    
-//    [self startTimer];
-//    [self setupDefaultUI];
-//}
-
-//- (void)setupDefaultUI {
-//    NSInteger targetIndex = 0;
-//    
-//    if (self.collectionView.contentOffset.x == 0 && self.imagePaths.count) {
-//        
-////        targetIndex = self.imagePaths.count * 0.5;
-//        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
-//    }
-//}
+- (NSInteger)getCurrentIndex:(NSIndexPath *)indexPath {
+    return indexPath.item % self.imagePaths.count;
+}
 
 
 #pragma mark - setter

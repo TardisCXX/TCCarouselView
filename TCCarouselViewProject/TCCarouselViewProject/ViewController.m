@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import "TCCarouselView.h"
+#import "TCDemoViewController.h"
 
 #define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
 
-@interface ViewController ()
+@interface ViewController () <TCCarouselViewDelegate>
 
 /// 轮播器
 @property (nonatomic, strong) TCCarouselView *carouselView;
@@ -26,6 +27,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.carouselView = [[TCCarouselView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT / 3)];
+    self.carouselView.delegate = self;
     [self.view addSubview:self.carouselView];
     
     [self getLocationImages];
@@ -52,6 +54,46 @@
     }
     
     self.carouselView.images = arrM.copy;
+}
+
+#pragma mark - TCCarouselViewDelegate
+
+- (void)carouselView:(TCCarouselView *)carouselView didSelectedIndex:(NSInteger)index {
+    TCDemoViewController *vc = [[TCDemoViewController alloc] init];
+    switch (index) {
+        case 0: {
+            vc.color = [UIColor redColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+            
+            break;
+        }
+        case 2: {
+            vc.color = [UIColor blueColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+            
+            break;
+        }
+        case 4: {
+            vc.color = [UIColor blackColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+            
+            break;
+        }
+        case 6: {
+            vc.color = [UIColor orangeColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+            
+            break;
+        }
+            
+            
+        default: {
+            vc.color = [UIColor purpleColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+            
+            break;
+        }
+    }
 }
 
 
