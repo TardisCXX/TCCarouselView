@@ -22,6 +22,9 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 /// 当前索引
 @property (nonatomic, assign) NSInteger currentIndex;
 
+/// 图片路径数组
+@property (nonatomic, strong) NSArray<NSString *> *imagePaths;
+
 @end
 
 @implementation TCCarouselView
@@ -31,7 +34,6 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupTimer];
         [self setupUI];
     }
     
@@ -41,7 +43,18 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    self.flowLayout.itemSize = self.frame.size;
     self.collectionView.frame = self.bounds;
+    if (self.collectionView.contentOffset.x == 0 && self.imagePaths.count) {
+        NSInteger targetIndex = 0;
+        targetIndex = self.imagePaths.count * 0.5;
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+    }
+    [self startTimer];
+    
+//    [self setupTimer];
+    
+    
 }
 
 #pragma mark - UI
@@ -67,18 +80,27 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 }
 
 - (void)stopTimer {
-    if (self.timer == nil || !self.timer.isValid) {
-        return;
-    }
-    
     [self.timer invalidate];
     self.timer = nil;
 }
 
 - (void)updateTimer {
-    [self.collectionView setContentOffset:CGPointMake(self.bounds.size.width * 2, 0) animated:YES];
-    [self scrollViewDidEndDecelerating:self.collectionView];
     NSLog(@"------------");
+    
+    if (self.imagePaths.count == 0) {
+        return;
+    }
+    
+    NSInteger currentIndex = self.collectionView.bounds.size.width == 0 ? 0 : MAX(0, (self.collectionView.contentOffset.x + self.flowLayout.itemSize.width * 0.5) / self.flowLayout.itemSize.width);
+    NSInteger targetIndex = currentIndex + 1;
+    if (targetIndex >= self.imagePaths.count) {
+        targetIndex = self.imagePaths.count * 0.5;
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        return;
+    }
+    
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+   
 }
 
 
@@ -89,53 +111,33 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (self.images.count > 0) {
-        return self.images.count;
-    }
-    
-    if (self.imageUrls.count > 0) {
-        return self.imageUrls.count;
-    }
-    
-    return 0;
+    return self.imagePaths.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TCShowContentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kTCShowContentCellIndentifier forIndexPath:indexPath];
-    NSInteger index = 0;
-    if (self.images.count > 0) {
-        index = (indexPath.item - 1 + self.images.count + self.currentIndex) % self.images.count;
-        cell.image = self.images[index];
-        NSLog(@"index:%zd", index);
-        
-        return cell;
-    }
+    NSInteger index = indexPath.item % self.imagePaths.count;
+    cell.imageUrl = self.imagePaths[index];
     
-    if (self.imageUrls.count > 0) {
-        cell.imageUrl = self.imageUrls[indexPath.item];
-        
-        return cell;
-    }
+    NSLog(@"index:%zd item:%zd", index,indexPath.item);
     
-    return [UICollectionViewCell new];
+    return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"indexPath:%@", @(indexPath.item));
-}
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSInteger offset = scrollView.contentOffset.x / scrollView.bounds.size.width - 1;
-    NSLog(@"offset:%zd", offset);
+//    NSInteger offset = scrollView.contentOffset.x / scrollView.bounds.size.width - 1;
+//    
+//    if (offset == 0) {
+//        return;
+//    }
+//    self.currentIndex = (self.currentIndex + offset + self.images.count) % self.images.count;
     
-    if (offset == 0) {
-        return;
-    }
+    NSInteger offset = self.collectionView.contentOffset.x / self.collectionView.bounds.size.width;
+    self.currentIndex = offset + 1;
     
-    self.currentIndex = (self.currentIndex + offset + self.images.count) % self.images.count;
-    NSLog(@"要显示图片索引:%zd", self.currentIndex);
+    NSLog(@"offset:%zd-----要显示图片索引:%zd", offset, self.currentIndex);
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.collectionView setContentOffset:CGPointMake(scrollView.bounds.size.width, 0) animated:YES];
@@ -150,32 +152,47 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
     [self startTimer];
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"indexPath:%@", @(indexPath.item));
+}
+
 #pragma mark - private
 
-- (void)setupTimer {
-    if (self.images.count > 0 || self.imageUrls.count > 0) {
-        [self setupDefaultUI];        
-    }
-    
-    if (self.images.count > 2) {
-        [self startTimer];
-        return;
-    }
-    if (self.imageUrls.count > 2) {
-        [self startTimer];
-        return;
-    }
-}
+//- (void)setupTimer {
+////    if (self.imagePaths.count > 0) {
+////        [self setupDefaultUI];        
+////    }
+////    
+////    if (self.imagePaths.count > 2) {
+////        [self startTimer];
+////    }
+//    
+//    [self startTimer];
+//    [self setupDefaultUI];
+//}
 
-- (void)setupDefaultUI {
-    self.collectionView.contentOffset = CGPointMake(self.bounds.size.width, 0);
-    self.currentIndex = 0;
-}
+//- (void)setupDefaultUI {
+//    NSInteger targetIndex = 0;
+//    
+//    if (self.collectionView.contentOffset.x == 0 && self.imagePaths.count) {
+//        
+////        targetIndex = self.imagePaths.count * 0.5;
+//        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+//    }
+//}
 
 
 #pragma mark - setter
 
+- (void)setImages:(NSArray<NSString *> *)images {
+    _images = images;
+    self.imagePaths = images;
+}
 
+- (void)setImageUrls:(NSArray<NSString *> *)imageUrls {
+    _imageUrls = imageUrls;
+    self.imagePaths = imageUrls;
+}
 
 #pragma mark - getter
 
@@ -183,7 +200,6 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
     if (!_flowLayout) {
         _flowLayout = [[UICollectionViewFlowLayout alloc] init];
         _flowLayout.minimumLineSpacing = 0;
-        _flowLayout.itemSize = self.frame.size;
         _flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     }
     
@@ -200,6 +216,8 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.pagingEnabled = YES;
         _collectionView.bounces = NO;
+        _collectionView.scrollsToTop = NO;
+        _collectionView.contentSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
     }
     
     return _collectionView;

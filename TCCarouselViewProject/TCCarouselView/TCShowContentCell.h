@@ -10,9 +10,6 @@
 
 @interface TCShowContentCell : UICollectionViewCell
 
-/// 图片
-@property (nonatomic, strong) UIImage *image;
-
 /// 图片地址
 @property (nonatomic, copy) NSString *imageUrl;
 

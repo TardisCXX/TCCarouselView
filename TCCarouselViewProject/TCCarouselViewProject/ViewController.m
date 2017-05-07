@@ -44,11 +44,11 @@
 
 
 - (void)getLocationImages {
-    UIImage *image = nil;
+    NSString *imagePath = nil;
     NSMutableArray *arrM = [NSMutableArray array];
     for (int i = 1; i < 10; i++) {
-        image = [UIImage imageNamed:[NSString stringWithFormat:@"mm0%d", i]];
-        [arrM addObject:image];
+        imagePath = [NSString stringWithFormat:@"mm0%d", i];
+        [arrM addObject:imagePath];
     }
     
     self.carouselView.images = arrM.copy;

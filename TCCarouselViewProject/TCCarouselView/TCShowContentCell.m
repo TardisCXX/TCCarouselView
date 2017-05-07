@@ -55,10 +55,15 @@
 
 #pragma mark - setter
 
-- (void)setImage:(UIImage *)image {
-    _image = image;
-    self.imageView.image = _image;
+- (void)setImageUrl:(NSString *)imageUrl {
+    _imageUrl = imageUrl;
+    if ([_imageUrl hasPrefix:@"http://"] || [_imageUrl hasPrefix:@"https://"]) {
+        NSLog(@"网络下载");
+    } else {
+        self.imageView.image = [UIImage imageNamed:_imageUrl];
+    }
 }
+
 
 #pragma mark - getter
 
