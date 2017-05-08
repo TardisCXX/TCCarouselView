@@ -1,6 +1,6 @@
 # TCCarouselView
 
-**TCCarouselView** 一个使用基于UICollectionView的简易无限轮播的功能组件，没有过于冗余的功能，十分轻量级。
+**TCCarouselView** 是一个基于UICollectionView的简易无限轮播的功能组件，没有过于冗余的功能，十分轻量级。
 
 ## TCCarouselView的使用
 在需要用到的地方 `#import <TCCarouselView.h>`

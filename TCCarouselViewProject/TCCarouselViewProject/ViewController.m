@@ -31,7 +31,8 @@
     self.carouselView.delegate = self;
     [self.view addSubview:self.carouselView];
     
-    [self getLocationImages];
+//    [self getLocationImages];
+    [self getNetworkImages];
 }
 
 

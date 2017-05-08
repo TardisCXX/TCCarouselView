@@ -195,6 +195,13 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 - (void)setImageUrls:(NSArray<NSString *> *)imageUrls {
     _imageUrls = imageUrls;
     self.imagePaths = imageUrls;
+    self.totalItemCount = self.imagePaths.count * 100;
+    if (self.imagePaths.count != 1) {
+        [self startTimer];
+    }
+    self.pageControl.numberOfPages = _images.count;
+    
+    [self.collectionView reloadData];
 }
 
 #pragma mark - getter

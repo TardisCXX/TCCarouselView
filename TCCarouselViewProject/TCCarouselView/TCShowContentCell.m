@@ -44,7 +44,6 @@
 
 - (void)setupUI {
     [self.contentView addSubview:self.imageView];
-    
 }
 
 #pragma mark - action
@@ -59,6 +58,14 @@
     _imageUrl = imageUrl;
     if ([_imageUrl hasPrefix:@"http://"] || [_imageUrl hasPrefix:@"https://"]) {
         NSLog(@"网络下载");
+        NSURL *url = [NSURL URLWithString:_imageUrl];
+        __block NSError *error = nil;
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedAlways error:&error];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.imageView.image = [UIImage imageWithData:data];
+            });
+        });
     } else {
         self.imageView.image = [UIImage imageNamed:_imageUrl];
     }
