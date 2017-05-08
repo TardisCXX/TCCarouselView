@@ -72,7 +72,6 @@
 - (void)setImageUrl:(NSString *)imageUrl {
     _imageUrl = imageUrl;
     if ([_imageUrl hasPrefix:@"http://"] || [_imageUrl hasPrefix:@"https://"]) {
-        NSLog(@"网络下载");
         NSURL *url = [NSURL URLWithString:_imageUrl];
         __block NSError *error = nil;
         dispatch_async(dispatch_get_global_queue(0, 0), ^{

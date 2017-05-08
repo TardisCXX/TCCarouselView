@@ -91,8 +91,6 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 }
 
 - (void)updateTimer {
-    NSLog(@"------------");
-    
     if (self.totalItemCount == 0) {
         return;
     }
@@ -124,8 +122,6 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
     TCShowContentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kTCShowContentCellIndentifier forIndexPath:indexPath];
     NSInteger index = [self getCurrentIndex:indexPath];
     cell.imageUrl = self.imagePaths[index];
-    
-    NSLog(@"index:%zd item:%zd", index,indexPath.item);
     
     return cell;
 }
@@ -163,12 +159,9 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"indexPath:%@", @(indexPath.item));
-    
     if ([self.delegate respondsToSelector:@selector(carouselView:didSelectedIndex:)]) {
         [self.delegate carouselView:self didSelectedIndex:[self getCurrentIndex:indexPath]];
     }
-    
 }
 
 #pragma mark - private
