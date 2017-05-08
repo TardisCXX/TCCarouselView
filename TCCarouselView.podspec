@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   s.name         = "TCCarouselView"
   s.version      = "0.0.1"
-  s.summary      = "简易的轮播视图"
+  s.summary      = "一个轻量级无限轮播组件"
   s.homepage     = "https://github.com/TardisCXX/TCCarouselView"
   s.license      = "MIT"
   s.author       = { "TardisCXX" => "email@address.com" }
