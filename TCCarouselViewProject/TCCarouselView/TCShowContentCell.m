@@ -44,6 +44,10 @@
 
 - (void)setupUI {
     [self.contentView addSubview:self.imageView];
+    
+    UIColor *color = [UIColor darkGrayColor];
+    UIImage *image = [self getImage:color];
+    self.imageView.image = image;
 }
 
 #pragma mark - action
@@ -51,6 +55,17 @@
 
 #pragma mark - private
 
+- (UIImage *)getImage:(UIColor *)color {
+    CGRect rect = CGRectMake(0, 0, 1.0, 1.0);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(ctx, color.CGColor);
+    CGContextFillRect(ctx, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
 
 #pragma mark - setter
 
