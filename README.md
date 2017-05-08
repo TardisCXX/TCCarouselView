@@ -18,6 +18,50 @@ self.carouselView.imageUrls = array;
 [self.view addSubview:self.carouselView];
 ```
 
+实现代理方法
+
+```
+#pragma mark - TCCarouselViewDelegate
+
+- (void)carouselView:(TCCarouselView *)carouselView didSelectedIndex:(NSInteger)index {
+    // 此处做界面跳转操作
+    TCDemoViewController *vc = [[TCDemoViewController alloc] init];
+    switch (index) {
+        case 0: {
+            vc.color = [UIColor redColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+
+            break;
+        }
+        case 2: {
+            vc.color = [UIColor blueColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+
+            break;
+        }
+        case 4: {
+            vc.color = [UIColor blackColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+
+            break;
+        }
+        case 6: {
+            vc.color = [UIColor orangeColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+
+            break;
+        }
+
+        default: {
+            vc.color = [UIColor purpleColor];
+            [self presentViewController:vc animated:YES completion:NULL];
+
+            break;
+        }
+    }
+}
+```
+
 ## 安装
 1. CocoaPods安装：
 ```
