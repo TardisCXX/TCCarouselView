@@ -16,7 +16,7 @@
 @interface ViewController () <TCCarouselViewDelegate>
 
 /// 轮播器
-@property (nonatomic, strong) TCCarouselView *carouselView;
+@property (nonatomic, weak) TCCarouselView *carouselView;
 
 @end
 
@@ -26,7 +26,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.carouselView = [[TCCarouselView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT / 3)];
+    TCCarouselView *carouselView = [[TCCarouselView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT / 3)];
+    self.carouselView = carouselView;
     self.carouselView.delegate = self;
     [self.view addSubview:self.carouselView];
     

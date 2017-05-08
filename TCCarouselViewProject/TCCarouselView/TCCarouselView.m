@@ -28,6 +28,9 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 /// 图片路径数组
 @property (nonatomic, strong) NSArray<NSString *> *imagePaths;
 
+/// 分页控件
+@property (nonatomic, strong) UIPageControl *pageControl;
+
 @end
 
 @implementation TCCarouselView
@@ -48,6 +51,7 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
     
     self.flowLayout.itemSize = self.frame.size;
     self.collectionView.frame = self.bounds;
+    self.pageControl.frame = CGRectMake(self.center.x * 0.5, self.frame.size.height - 20, 100, 10);
     if (self.collectionView.contentOffset.x == 0 && self.totalItemCount) {
         NSInteger targetIndex = 0;
         targetIndex = self.totalItemCount * 0.5;
@@ -61,9 +65,11 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 
 - (void)setupUI {
     [self addSubview:self.collectionView];
+    [self addSubview:self.pageControl];
     
     [self.collectionView registerClass:[TCShowContentCell class] forCellWithReuseIdentifier:kTCShowContentCellIndentifier];
 }
+
 
 #pragma mark - networking method
 
@@ -126,15 +132,26 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
 
 #pragma mark - UICollectionViewDelegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.imagePaths.count == 0) {
+        return;
+    }
+    NSInteger itemIndex = self.collectionView.contentOffset.x + self.flowLayout.itemSize.width * 0.5 / self.flowLayout.itemSize.width;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:itemIndex inSection:0];
+    NSInteger currentIndex = [self getCurrentIndex:indexPath];
+    self.pageControl.currentPage = currentIndex;
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSInteger offset = self.collectionView.contentOffset.x / self.collectionView.bounds.size.width;
-    self.currentIndex = offset + 1;
+    if (self.imagePaths.count == 0) {
+        return;
+    }
     
-    NSLog(@"offset:%zd-----要显示图片索引:%zd", offset, self.currentIndex);
+    NSInteger itemIndex = self.collectionView.contentOffset.x + self.flowLayout.itemSize.width * 0.5 / self.flowLayout.itemSize.width;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:itemIndex inSection:0];
+    NSInteger currentIndex = [self getCurrentIndex:indexPath];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView setContentOffset:CGPointMake(scrollView.bounds.size.width, 0) animated:YES];
-    });
+    self.pageControl.currentPage = currentIndex;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
@@ -170,6 +187,7 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
     if (self.imagePaths.count != 1) {
         [self startTimer];
     }
+    self.pageControl.numberOfPages = _images.count;
     
     [self.collectionView reloadData];
 }
@@ -206,6 +224,19 @@ static NSString *const kTCShowContentCellIndentifier = @"TCShowContentCell";
     }
     
     return _collectionView;
+}
+
+- (UIPageControl *)pageControl {
+    if (!_pageControl) {
+        _pageControl = [[UIPageControl alloc] init];
+        _pageControl.numberOfPages = 1;
+        _pageControl.currentPage = 0;
+        _pageControl.hidesForSinglePage = YES;
+        _pageControl.defersCurrentPageDisplay = NO;
+        _pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+    }
+    
+    return _pageControl;
 }
 
 
